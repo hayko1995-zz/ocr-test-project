@@ -1,4 +1,8 @@
 # ocr-test-project
-#install 
+#install on linux
 sudo apt install opencv-python3
 sudo apt-get install tesseract-ocr
+
+#install on windows
+guide for install tenseract on windows https://rb.gy/5kqz3q
+pip install pytesseract
