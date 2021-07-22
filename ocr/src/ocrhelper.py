@@ -17,10 +17,8 @@ def ocrPDF(input, output):
     # pages = convert_from_path(PDF_file, 500)
 
 
-def ocrImage(path, output): # TODO: Understand the document type and create a template for the file type
+def ocrImage(image, output): # TODO: Understand the document type and create a template for the file type
     f = open(output, 'w')
-    print(path)
-    image = cv2.imread(path)
     text = tess.image_to_string(image, lang='eng')
     f.write(text)
     f.close()

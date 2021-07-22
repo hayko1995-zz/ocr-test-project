@@ -20,8 +20,8 @@ def main(input, output, verbose):
     logging.debug("Start")
     logging.debug(file_extension)
     if(file_extension == ".png" or file_extension == ".jpg"):
-        path = preProcess.preprocessingImage(path)
-        ocrHelper.ocrImage(path, output)
+        image = preProcess.preprocessingImage(path)
+        ocrHelper.ocrImage(image, output)
     if(file_extension == "pdf"):
         path = preProcess.preprocessingPDF(input)
         ocrHelper.ocrImage(path, output)
