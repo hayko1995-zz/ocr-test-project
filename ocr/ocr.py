@@ -1,7 +1,7 @@
 # #!/usr/bin/python3
 import click
 import logging
-import src.preprocessing as preProcess
+import src.processing as preProcess
 import src.ocrhelper as ocrHelper
 import os
 import pathlib
@@ -12,6 +12,8 @@ import pathlib
 @click.option('--output', type=str, default="res.txt", help='output file path')
 @click.option('--verbose', is_flag=True)
 def main(input, output, verbose):
+
+    
 
     # imput filters
     file = pathlib.Path(input)
@@ -24,7 +26,8 @@ def main(input, output, verbose):
     logging.getLogger(__name__)
 
     if(verbose):
-        logging.basicConfig(level=logging.DEBUG)
+        logging.basicConfig(level = logging.INFO)
+        logging.getLogger().setLevel(logging.DEBUG)
     logging.debug("Start")
     logging.debug(file_extension)
     if(file_extension == ".png" or file_extension == ".jpg"):

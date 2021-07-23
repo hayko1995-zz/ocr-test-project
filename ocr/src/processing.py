@@ -5,6 +5,7 @@ import cv2
 import pytesseract as tess
 import numpy as np
 from pdf2image import convert_from_path
+import re
 
 
 def checkImageQuality(image):
@@ -68,4 +69,9 @@ def preprocessingPDF(path):
     logging.info("preProcessing done")
 
     return image_counter
-    # return 0
+
+
+def postProcessing(text):
+    text = text.replace('-\n', '')
+    text = re.sub(r'([^\W\d_])|.', r'\1', text, re.DOTALL)
+    return text

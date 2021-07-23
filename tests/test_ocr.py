@@ -2,7 +2,7 @@ import sys
 sys.path.append('../ocr')
 import os
 import cv2 as cv
-from ocr.src import preprocessing
+from ocr.src import processing 
 from click.testing import CliRunner
 from ocr.ocr import main
 from ocr import __version__
@@ -23,14 +23,14 @@ def test_main():  # test software worsk or not
 def test_checkImageQuality():  # test software worsk or not
     path = os.path.abspath("../ocr/sample/1.png")
     img = cv.imread(path)
-    result = preprocessing.checkImageQuality(img)
+    result = processing.checkImageQuality(img)
     assert result == True
 
 
 def test_preprocessingImage():  # test software worsk or not
     path = os.path.abspath("samples/test.png")
     testImage = cv.imread(path)
-    originalImage = preprocessing.preprocessingImage("../ocr/sample/1.png")
+    originalImage = processing.preprocessingImage("../ocr/sample/1.png")
     cv.imwrite("test.png", originalImage)
     originalImage = cv.imread("test.png")
     os.remove("test.png")
