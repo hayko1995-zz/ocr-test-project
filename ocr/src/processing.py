@@ -22,6 +22,7 @@ def checkImageQuality(image):
 
 def preprocessingImage(path):
     logging.info("preProcessing image ")
+    print(path)
     image = cv2.imread(path)  # read image
 
     if (checkImageQuality(image)):

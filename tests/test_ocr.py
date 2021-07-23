@@ -16,12 +16,12 @@ def test_version():
 
 def test_main():  # test software worsk or not
     runner = CliRunner()
-    result = runner.invoke(main, input="../ocr/sample/1.png")
+    result = runner.invoke(main, input="../ocr/samples/1.png")
     assert result.exit_code == 0
 
 
 def test_checkImageQuality():  # test software worsk or not
-    path = os.path.abspath("../ocr/sample/1.png")
+    path = os.path.abspath("../ocr/samples/1.png")
     img = cv.imread(path)
     result = processing.checkImageQuality(img)
     assert result == True
@@ -30,7 +30,7 @@ def test_checkImageQuality():  # test software worsk or not
 def test_preprocessingImage():  # test software worsk or not
     path = os.path.abspath("samples/test.png")
     testImage = cv.imread(path)
-    originalImage = processing.preprocessingImage("../ocr/sample/1.png")
+    originalImage = processing.preprocessingImage("../ocr/samples/1.png")
     cv.imwrite("test.png", originalImage)
     originalImage = cv.imread("test.png")
     os.remove("test.png")
