@@ -19,9 +19,9 @@ def checkImageQuality(image):
     return False
 
 
-def preprocessingImage(input):
+def preprocessingImage(path):
     logging.info("preProcessing image ")
-    image = cv2.imread(input)  # read image
+    image = cv2.imread(path)  # read image
 
     if (checkImageQuality(image)):
 
@@ -40,16 +40,15 @@ def preprocessingImage(input):
         # algorithm calculate the threshold for small regions of the image
         image = cv2.adaptiveThreshold(
             gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 31, 2)
-
     return image
 
 
-def preprocessingPDF(input):
+def preprocessingPDF(path):
 
     logging.info("preProcessing pdf")
 
-    logging.debug(input)
-    pages = convert_from_path(input, 500)
+    logging.debug(path)
+    pages = convert_from_path(path, 500)
 
     # Counter to store images of each page of PDF to image
     image_counter = 1

@@ -33,6 +33,8 @@ def main(input, output, verbose):
     if(file_extension == ".pdf"):
         count = preProcess.preprocessingPDF(path)
         ocrHelper.ocrPDF(path, count, output)
+
+
 logging.info("done")
 
 if __name__ == '__main__':
