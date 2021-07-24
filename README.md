@@ -16,5 +16,5 @@ $python --input=<path to file> --output=<path to file>
 $Poetry run pytest
 
 
-# I have one mistake when im try to run with poetry 
-# poetry run ocr --image="path" didnt works :) 
+I have one mistake when im try to run with poetry 
+poetry run ocr --image="path" didnt works :) 
